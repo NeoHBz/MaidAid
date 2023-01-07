@@ -10,6 +10,8 @@ Pages:
 
   - Maid
     - Specialisations
+    - experience
+    - salary
       
   - Customer
     - ...
@@ -21,9 +23,11 @@ Pages:
 - Dashboard
   - Maid
     - Account
-      - Change S
+      - Change 
+        - User Profile Details (name/location/salary)
     - Stats
       - Income
+    - Work History
 
 
 README
