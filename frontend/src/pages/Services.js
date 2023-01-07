@@ -77,7 +77,7 @@ export default function Services() {
       <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
         <Text as={"span"}>Services We</Text>{" "}
         <Text color={"#0AC05E"} as={"span"}>
-          Offered
+          Offer
         </Text>
       </Heading>
       <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
