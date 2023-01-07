@@ -46,7 +46,7 @@ const SocialProfileWithImage = ({
           <Avatar
             backgroundColor={"white"}
             size={"xl"}
-            src={`https://avatars.dicebear.com/api/croodles/${randomSeed}.svg`}
+            src={`https://avatars.dicebear.com/api/avataaars/${randomSeed}.svg`}
             alt={"Author"}
             css={{
               border: "2px solid white",
@@ -142,36 +142,38 @@ export default function Helpers() {
           <Checkbox value="babysitter">Babysitter</Checkbox>
         </CheckboxGroup>
       </Stack>
-      <Stack direction="row">
-        <Text>Filter by Salary:</Text>
-        <Select
-          onChange={(e) => {
-            setSalaryFilter(e.target.value);
-          }}
-          value={salaryFilter}
-        >
-          <option value={5000}>5,000</option>
-          <option value={10000}>10,000</option>
-          <option value={15000}>15,000</option>
-          <option value={20000}>20,000</option>
-        </Select>
-      </Stack>
-      <Stack direction="row">
-        <Text>Filter by City:</Text>
-        <Select
-          onChange={(e) => {
-            setSelectedCity(e.target.value);
-          }}
-          value={selectedCity}
-        >
-          {cities.map((city, index) => {
-            return (
-              <option key={index} value={city}>
-                {city}
-              </option>
-            );
-          })}
-        </Select>
+      <Stack>
+        <Stack direction="row">
+          <Text>Filter by Salary:</Text>
+          <Select
+            onChange={(e) => {
+              setSalaryFilter(e.target.value);
+            }}
+            value={salaryFilter}
+          >
+            <option value={5000}>5,000</option>
+            <option value={10000}>10,000</option>
+            <option value={15000}>15,000</option>
+            <option value={20000}>20,000</option>
+          </Select>
+        </Stack>
+        <Stack direction="row">
+          <Text>Filter by City:</Text>
+          <Select
+            onChange={(e) => {
+              setSelectedCity(e.target.value);
+            }}
+            value={selectedCity}
+          >
+            {cities.map((city, index) => {
+              return (
+                <option key={index} value={city}>
+                  {city}
+                </option>
+              );
+            })}
+          </Select>
+        </Stack>
       </Stack>
       <Stack
         direction={["column", "row"]}
