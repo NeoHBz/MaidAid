@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "maids",
   "info": {
-    "name": "maid"
+    "name": "maid",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,8 +12,14 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "yoe": {
+    "experience": {
       "type": "decimal"
+    },
+    "specializations": {
+      "type": "json"
+    },
+    "salary": {
+      "type": "integer"
     }
   }
 }

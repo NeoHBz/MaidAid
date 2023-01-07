@@ -33,7 +33,7 @@ module.exports = {
   async register(ctx) {
     const requestBody = ctx.request.body;
     // validate the request body if it has all the required fields
-    const requiredFields = [
+    let requiredFields = [
       "email",
       "mobile",
       "firstName",
@@ -41,7 +41,15 @@ module.exports = {
       "dob",
       "location",
       "pincode",
+      "role",
     ];
+    if (requestBody.role === "maid") {
+      additionalFields = ["specializations", "experience", "salary"];
+    }
+    if (requestBody.role === "customer") {
+      // additionalFields = ["address", "city", "state", "country"];
+    }
+    requiredFields = requiredFields.concat(additionalFields);
     const missingFields = requiredFields.filter((field) => !requestBody[field]);
     if (missingFields.length) {
       ctx.throw(400, `Missing fields: ${missingFields.join(", ")}`);
