@@ -13,7 +13,7 @@ import {
   Text,
   useColorModeValue,
   Link,
-  Select,
+  Checkbox,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
@@ -76,12 +76,12 @@ export default function Signupasahelper() {
             </FormControl>
             <FormControl id="pincode" isRequired>
               <FormLabel>Specialisation</FormLabel>
-              <Select placeholder="Select option">
-                <option value="option1">Maid</option>
-                <option value="option2">Cook</option>
-                <option value="option3">Babysitter</option>
-                <option value="option3">Elderly Care</option>
-              </Select>
+              <Stack direction={"row"}>
+                <Checkbox value="maid">Maid</Checkbox>
+                <Checkbox value="cook">Cook</Checkbox>
+                <Checkbox value="babysitter">Babysitter</Checkbox>
+                <Checkbox value="elderlycare">Elderly Care</Checkbox>
+              </Stack>
             </FormControl>
             <FormControl id="password" isRequired>
               <FormLabel>Password</FormLabel>
