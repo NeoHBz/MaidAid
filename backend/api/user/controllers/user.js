@@ -2,6 +2,15 @@
 const uniqid = require("uniqid");
 
 module.exports = {
+  async roleProfile(role) {
+    const rP = await strapi
+      .query("role", "users-permissions")
+      .findOne({ name: role }, []);
+    if (!rP) {
+      return false;
+    }
+    return rP;
+  },
   async login(ctx) {
     const { email, password } = ctx.request.body;
     const user = await strapi
@@ -20,6 +29,7 @@ module.exports = {
       id: user.id,
     });
   },
+
   async register(ctx) {
     const requestBody = ctx.request.body;
     // validate the request body if it has all the required fields
@@ -44,6 +54,15 @@ module.exports = {
     //   numbers: true,
     // });
     const password = requestBody.password || "password";
+    let role;
+    if (requestBody.role !== "customer" || requestBody.role !== "maid") {
+      const roleProfile = await this.roleProfile(requestBody.role);
+      if (!roleProfile) {
+        ctx.throw(400, "Invalid role");
+      } else {
+        role = roleProfile.id;
+      }
+    }
     try {
       const user = await strapi.plugins["users-permissions"].services.user.add({
         username,
@@ -57,6 +76,7 @@ module.exports = {
         pincode: requestBody.pincode,
         confirmed: true,
         blocked: false,
+        role,
       });
       return await strapi.plugins["users-permissions"].services.jwt.issue({
         id: user.id,
