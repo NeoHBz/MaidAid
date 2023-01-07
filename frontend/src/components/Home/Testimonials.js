@@ -148,7 +148,7 @@ export default function Testimonials() {
                   "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 }
                 name={"Ajay Mandal"}
-                title={"Bihar, Patna"}
+                title={"Wakanda"}
               />
             </Testimonial>
           </Stack>
