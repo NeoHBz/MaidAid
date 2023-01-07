@@ -27,7 +27,7 @@ const SocialProfileWithImage = ({
   return (
     <Center py={6}>
       <Box
-        minW={"270px"}
+        minW={"320px"}
         w={"full"}
         bg={useColorModeValue("white", "gray.800")}
         boxShadow={"2xl"}
@@ -117,7 +117,8 @@ export default function Helpers() {
     "babysitter",
     "elderlycare",
   ]);
-  const [salaryFilter, setSalaryFilter] = useState(10000);
+  const [salaryFilter, setSalaryFilter] = useState(20000);
+  const [selectedCity, setSelectedCity] = useState("All");
   return (
     <VStack mt={16}>
       <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
@@ -155,6 +156,23 @@ export default function Helpers() {
           <option value={20000}>20,000</option>
         </Select>
       </Stack>
+      <Stack direction="row">
+        <Text>Filter by City:</Text>
+        <Select
+          onChange={(e) => {
+            setSelectedCity(e.target.value);
+          }}
+          value={selectedCity}
+        >
+          {cities.map((city, index) => {
+            return (
+              <option key={index} value={city}>
+                {city}
+              </option>
+            );
+          })}
+        </Select>
+      </Stack>
       <Stack
         direction={["column", "row"]}
         spacing={"16"}
@@ -164,7 +182,8 @@ export default function Helpers() {
         {MaidData.map((data, index) => {
           if (
             filter.some((f) => data.specializations.includes(f)) &&
-            data.salary <= salaryFilter
+            data.salary <= salaryFilter &&
+            (selectedCity === "All" || data.location.includes(selectedCity))
           ) {
             return (
               <SocialProfileWithImage
@@ -182,6 +201,18 @@ export default function Helpers() {
     </VStack>
   );
 }
+
+const cities = [
+  "All",
+  "Mumbai",
+  "Delhi",
+  "Bangalore",
+  "Hyderabad",
+  "Ahmedabad",
+  "Chennai",
+  "Kolkata",
+  "Pune",
+];
 
 const MaidData = [
   {
