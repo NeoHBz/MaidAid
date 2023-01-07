@@ -124,21 +124,63 @@ export default function Helpers() {
 
 const MaidData = [
   {
-    name: "John Doe",
-    age: 21,
+    name: "Ravi Shah",
+    age: 25,
+    location: "Mumbai, India",
+    salary: 14000,
+  },
+  {
+    name: "Priya Gupta",
+    age: 32,
+    location: "Delhi, India",
+    salary: 23000,
+  },
+  {
+    name: "Amit Patel",
+    age: 29,
+    location: "Bengaluru, India",
+    salary: 20000,
+  },
+  {
+    name: "Anjali Singh",
+    age: 35,
+    location: "Kolkata, India",
+    salary: 30000,
+  },
+  {
+    name: "Sohan Jain",
+    age: 20,
     location: "Delhi, India",
     salary: 10000,
   },
   {
-    name: "John Doe",
-    age: 21,
-    location: "Delhi, India",
-    salary: 8000,
+    name: "Neha Patel",
+    age: 27,
+    location: "Ahmedabad, India",
+    salary: 17000,
   },
   {
-    name: "John Doe",
-    age: 21,
+    name: "Rohit Sharma",
+    age: 22,
+    location: "Chennai, India",
+    salary: 12000,
+  },
+  {
+    name: "Anisha Das",
+    age: 24,
+    location: "Hyderabad, India",
+    salary: 15000,
+  },
+  {
+    name: "Vikram Mehta",
+    age: 30,
+    location: "Pune, India",
+    salary: 22000,
+  },
+  {
+    name: "Diya Khan",
+    age: 28,
     location: "Delhi, India",
-    salary: 11000,
+    salary: 18000,
   },
 ];
