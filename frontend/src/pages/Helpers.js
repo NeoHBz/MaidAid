@@ -20,6 +20,7 @@ const SocialProfileWithImage = ({
   age = 21,
   location = "Delhi, India",
   salary = 10000,
+  specializations = [],
 }) => {
   const randomSeed = Math.floor(Math.random() * 1000);
   return (
@@ -57,7 +58,15 @@ const SocialProfileWithImage = ({
             <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
               {name}
             </Heading>
-            <Text color={"gray.500"}>Maid</Text>
+            <Text color={"gray.500"}>
+              {specializations.map((specialization, index) => {
+                return (
+                  String(specialization).charAt(0).toUpperCase() +
+                  String(specialization).slice(1) +
+                  (index === specializations.length - 1 ? "" : ", ")
+                );
+              })}
+            </Text>
           </Stack>
 
           <Stack direction={"row"} justify={"center"} spacing={12}>
@@ -122,6 +131,7 @@ export default function Helpers() {
             setFilter(e);
           }}
           colorScheme="green"
+          defaultValue={filter}
         >
           <Checkbox value="elderlycare">Elderly Care</Checkbox>
           <Checkbox value="maid">Maid</Checkbox>
@@ -139,6 +149,7 @@ export default function Helpers() {
                 age={data.age}
                 location={data.location}
                 salary={data.salary}
+                specializations={data.specializations}
               />
             );
           }
