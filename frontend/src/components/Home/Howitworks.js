@@ -23,7 +23,13 @@ const ServicesCard = (props) => {
         bg="white"
         border={"1px"}
         borderColor="black"
-        boxShadow="3px 3px 0 black"
+        boxShadow={"9px 10px 25px 0px rgba(0,0,0,0.5)"}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = "9px 10px 25px 0px rgba(0,0,0,0.3)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = "9px 10px 25px 0px rgba(0,0,0,0.5)";
+        }}
       >
         <Box h={"200px"} borderBottom={"1px"} borderColor="black">
           <Img
