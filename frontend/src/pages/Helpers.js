@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Heading,
   Avatar,
@@ -10,6 +11,8 @@ import {
   Button,
   useColorModeValue,
   VStack,
+  CheckboxGroup,
+  Checkbox,
 } from "@chakra-ui/react";
 
 const SocialProfileWithImage = ({
@@ -98,6 +101,12 @@ const SocialProfileWithImage = ({
 };
 
 export default function Helpers() {
+  const [filter, setFilter] = useState([
+    "cook",
+    "maid",
+    "babysitter",
+    "elderlycare",
+  ]);
   return (
     <VStack mt={16}>
       <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
@@ -106,17 +115,34 @@ export default function Helpers() {
           Helpers
         </Text>
       </Heading>
+      <Stack direction="row">
+        <Text>Filter by:</Text>
+        <CheckboxGroup
+          onChange={(e) => {
+            setFilter(e);
+          }}
+          colorScheme="green"
+        >
+          <Checkbox value="elderlycare">Elderly Care</Checkbox>
+          <Checkbox value="maid">Maid</Checkbox>
+          <Checkbox value="cook">Cook</Checkbox>
+          <Checkbox value="babysitter">Babysitter</Checkbox>
+        </CheckboxGroup>
+      </Stack>
       <Stack direction={["column", "row"]} spacing={"16"}>
-        {/* we can map here dummy data */}
-        {MaidData.map((data, index) => (
-          <SocialProfileWithImage
-            key={index}
-            name={data.name}
-            age={data.age}
-            location={data.location}
-            salary={data.salary}
-          />
-        ))}
+        {MaidData.map((data, index) => {
+          if (filter.some((f) => data.specializations.includes(f))) {
+            return (
+              <SocialProfileWithImage
+                key={index}
+                name={data.name}
+                age={data.age}
+                location={data.location}
+                salary={data.salary}
+              />
+            );
+          }
+        })}
       </Stack>
     </VStack>
   );
@@ -128,59 +154,69 @@ const MaidData = [
     age: 25,
     location: "Mumbai, India",
     salary: 14000,
+    specializations: ["maid", "babysitter"],
   },
   {
     name: "Priya Gupta",
     age: 32,
     location: "Delhi, India",
     salary: 23000,
+    specializations: ["elderlycare"],
   },
   {
     name: "Amit Patel",
     age: 29,
     location: "Bengaluru, India",
     salary: 20000,
+    specializations: ["babysitter"],
   },
   {
     name: "Anjali Singh",
     age: 35,
     location: "Kolkata, India",
     salary: 30000,
+    specializations: ["cook", "maid"],
   },
   {
     name: "Sohan Jain",
     age: 20,
     location: "Delhi, India",
     salary: 10000,
+    specializations: ["cook"],
   },
   {
     name: "Neha Patel",
     age: 27,
     location: "Ahmedabad, India",
     salary: 17000,
+    specializations: ["maid", "elderlycare"],
   },
   {
     name: "Rohit Sharma",
     age: 22,
     location: "Chennai, India",
     salary: 12000,
+    specializations: ["babysitter"],
   },
   {
     name: "Anisha Das",
     age: 24,
     location: "Hyderabad, India",
     salary: 15000,
+    specializations: ["cook"],
   },
   {
     name: "Vikram Mehta",
     age: 30,
     location: "Pune, India",
     salary: 22000,
+    specializations: ["maid"],
   },
   {
     name: "Diya Khan",
     age: 28,
     location: "Delhi, India",
     salary: 18000,
+    specializations: ["babysitter", "elderlycare"],
   },
 ];
