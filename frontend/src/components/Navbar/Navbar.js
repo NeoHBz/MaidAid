@@ -14,6 +14,9 @@ import {
   useBreakpointValue,
   useDisclosure,
   Spacer,
+  Menu,
+  MenuButton,
+  MenuList,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -92,17 +95,28 @@ export default function Navbar() {
           >
             Login
           </Button>
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"#0AC05E"}
-            href={"/signup"}
-          >
-            Sign Up
-          </Button>
+          <Flex alignItems={"center"}>
+            <Menu>
+              <MenuButton
+                as={Button}
+                display={{ base: "none", md: "inline-flex" }}
+                fontSize={"sm"}
+                fontWeight={600}
+                color={"white"}
+                bg={"#0AC05E"}
+              >
+                Signup
+              </MenuButton>
+              <MenuList>
+                <Button as={"a"} href={"/signupasauser"} m={"1.5"}>
+                  As a User
+                </Button>
+                <Button as={"a"} href={"/signupasahelper"} m={"1.5"}>
+                  As a Helper
+                </Button>
+              </MenuList>
+            </Menu>
+          </Flex>
         </Stack>
       </Flex>
 
