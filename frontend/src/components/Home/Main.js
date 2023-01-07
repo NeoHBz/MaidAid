@@ -7,8 +7,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-//need to correct this assets/front/jpeg not working
-import frontpng from "/Users/janvi/Desktop/maidaid/frontend/src/assets/front.jpeg";
+import frontpng from "assets/front.jpeg";
 
 export default function Main() {
   return (

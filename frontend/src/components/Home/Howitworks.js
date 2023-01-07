@@ -8,9 +8,8 @@ import {
   Center,
   Img,
 } from "@chakra-ui/react";
-//need to correct this path
-import { ReactComponent as Worksvg } from "/Users/janvi/Desktop/maidaid/frontend/src/assets/work.svg";
-import { ReactComponent as Hiresvg } from "/Users/janvi/Desktop/maidaid/frontend/src/assets/hire.svg";
+import { ReactComponent as Worksvg } from "assets/work.svg";
+import { ReactComponent as Hiresvg } from "assets/hire.svg";
 
 const ServicesCard = (props) => {
   return (
