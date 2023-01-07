@@ -87,7 +87,7 @@ module.exports = {
         blocked: false,
         role: role.id,
       });
-      const userProfile = await strapi.controllers[role.name].newMaidProfile({
+      const userProfile = await strapi.controllers[role.name].newProfile({
         user: user.id,
         specializations: requestBody.specializations,
         experience: requestBody.experience,

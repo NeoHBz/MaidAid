@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-  async newMaidProfile({ user, specializations, experience, salary }) {
+  async newProfile({ user, specializations, experience, salary }) {
     const maid = await strapi.services.maid.create({
       user,
       specializations,
