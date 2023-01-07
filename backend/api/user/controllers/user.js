@@ -43,6 +43,7 @@ module.exports = {
       "pincode",
       "role",
     ];
+    let additionalFields = [];
     if (requestBody.role === "maid") {
       additionalFields = ["specializations", "experience", "salary"];
     }
@@ -68,7 +69,7 @@ module.exports = {
       if (!roleProfile) {
         ctx.throw(400, "Invalid role");
       } else {
-        role = roleProfile.id;
+        role = roleProfile;
       }
     }
     try {
@@ -84,7 +85,13 @@ module.exports = {
         pincode: requestBody.pincode,
         confirmed: true,
         blocked: false,
-        role,
+        role: role.id,
+      });
+      const userProfile = await strapi.controllers[role.name].newMaidProfile({
+        user: user.id,
+        specializations: requestBody.specializations,
+        experience: requestBody.experience,
+        salary: requestBody.salary,
       });
       return await strapi.plugins["users-permissions"].services.jwt.issue({
         id: user.id,

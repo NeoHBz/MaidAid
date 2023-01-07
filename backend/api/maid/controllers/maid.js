@@ -5,4 +5,14 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+  async newMaidProfile({ user, specializations, experience, salary }) {
+    const maid = await strapi.services.maid.create({
+      user,
+      specializations,
+      experience,
+      salary,
+    });
+    return maid;
+  },
+};
