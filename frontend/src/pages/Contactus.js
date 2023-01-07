@@ -28,12 +28,6 @@ import { BsGithub, BsPerson, BsFillTelephoneFill } from "react-icons/bs";
 export default function COntactus() {
   return (
     <VStack justify={"center"}>
-      <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
-        <Text as={"span"}>Join our</Text>{" "}
-        <Text color={"#0AC05E"} as={"span"}>
-          Team
-        </Text>
-      </Heading>
       <Container maxW="full" centerContent overflow="hidden">
         <Flex>
           <Box
