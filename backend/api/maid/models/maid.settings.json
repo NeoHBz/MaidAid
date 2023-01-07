@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "maids",
+  "info": {
+    "name": "maid"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "yoe": {
+      "type": "decimal"
+    }
+  }
+}
