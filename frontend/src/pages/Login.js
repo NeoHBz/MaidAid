@@ -64,7 +64,7 @@ export default function Login() {
             <Stack pt={6}>
               <Text align={"center"}>
                 Create a new account?{" "}
-                <Link href="/signup" color={"blue.400"}>
+                <Link href="/signupasauser" color={"blue.400"}>
                   SIgnup
                 </Link>
               </Text>

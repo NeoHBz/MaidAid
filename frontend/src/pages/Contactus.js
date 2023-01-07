@@ -23,22 +23,11 @@ import {
   MdFacebook,
   MdOutlineEmail,
 } from "react-icons/md";
-import {
-  BsGithub,
-  BsDiscord,
-  BsPerson,
-  BsFillTelephoneFill,
-} from "react-icons/bs";
+import { BsGithub, BsPerson, BsFillTelephoneFill } from "react-icons/bs";
 
 export default function COntactus() {
   return (
     <VStack justify={"center"}>
-      <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
-        <Text as={"span"}>Join our</Text>{" "}
-        <Text color={"#0AC05E"} as={"span"}>
-          Team
-        </Text>
-      </Heading>
       <Container maxW="full" centerContent overflow="hidden">
         <Flex>
           <Box
@@ -90,7 +79,7 @@ export default function COntactus() {
                           }}
                           leftIcon={<MdEmail color="#1970F1" size="20px" />}
                         >
-                          hello@abc.com
+                          hello@maidaid.com
                         </Button>
                         <Button
                           size="md"
@@ -130,14 +119,6 @@ export default function COntactus() {
                         isRound={true}
                         _hover={{ bg: "#0D74FF" }}
                         icon={<BsGithub size="28px" />}
-                      />
-                      <IconButton
-                        aria-label="discord"
-                        variant="ghost"
-                        size="lg"
-                        isRound={true}
-                        _hover={{ bg: "#0D74FF" }}
-                        icon={<BsDiscord size="28px" />}
                       />
                     </HStack>
                   </Box>

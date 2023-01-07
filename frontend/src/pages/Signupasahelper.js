@@ -13,11 +13,12 @@ import {
   Text,
   useColorModeValue,
   Link,
+  Select,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
-export default function Signup() {
+export default function Signupasahelper() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -30,7 +31,7 @@ export default function Signup() {
       <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
         <Stack align={"center"}>
           <Heading fontSize={"4xl"} textAlign={"center"}>
-            Sign up as a User
+            Sign up as a Helper
           </Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
             to enjoy all of our cool features ✌️
@@ -60,6 +61,27 @@ export default function Signup() {
             <FormControl id="email" isRequired>
               <FormLabel>Email address</FormLabel>
               <Input type="email" />
+            </FormControl>
+            <FormControl id="contact" isRequired>
+              <FormLabel>Contact no.</FormLabel>
+              <Input type={"tel"} />
+            </FormControl>
+            <FormControl id="location" isRequired>
+              <FormLabel>Location</FormLabel>
+              <Input type={"text"} />
+            </FormControl>
+            <FormControl id="pincode" isRequired>
+              <FormLabel>Pincode</FormLabel>
+              <Input type={"text"} />
+            </FormControl>
+            <FormControl id="pincode" isRequired>
+              <FormLabel>Specialisation</FormLabel>
+              <Select placeholder="Select option">
+                <option value="option1">Maid</option>
+                <option value="option2">Cook</option>
+                <option value="option3">Babysitter</option>
+                <option value="option3">Elderly Care</option>
+              </Select>
             </FormControl>
             <FormControl id="password" isRequired>
               <FormLabel>Password</FormLabel>
