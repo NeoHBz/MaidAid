@@ -139,7 +139,12 @@ export default function Helpers() {
           <Checkbox value="babysitter">Babysitter</Checkbox>
         </CheckboxGroup>
       </Stack>
-      <Stack direction={["column", "row"]} spacing={"16"}>
+      <Stack
+        direction={["column", "row"]}
+        spacing={"16"}
+        wrap="wrap"
+        justify={"center"}
+      >
         {MaidData.map((data, index) => {
           if (filter.some((f) => data.specializations.includes(f))) {
             return (
