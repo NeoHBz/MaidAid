@@ -108,10 +108,30 @@ export default function Navbar() {
                 Signup
               </MenuButton>
               <MenuList>
-                <Button as={"a"} href={"/signupasauser"} m={"1.5"}>
+                <Button
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "#0AC05E";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = "#E2E8F0";
+                  }}
+                  as={"a"}
+                  href={"/signupasauser"}
+                  m={"1.5"}
+                >
                   As a User
                 </Button>
-                <Button as={"a"} href={"/signupasahelper"} m={"1.5"}>
+                <Button
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "#0AC05E";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = "#E2E8F0";
+                  }}
+                  as={"a"}
+                  href={"/signupasahelper"}
+                  m={"1.5"}
+                >
                   As a Helper
                 </Button>
               </MenuList>
