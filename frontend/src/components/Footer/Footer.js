@@ -58,7 +58,7 @@ export default function Footer() {
       <VStack py={10} justify="center">
         <Image src={logo} boxSize="20"></Image>
         <Text pt={6} fontSize={"sm"} textAlign={"center"}>
-          © 2022 MaidAid. All rights reserved
+          © {new Date().getFullYear()} MaidAid. All rights reserved
         </Text>
       </VStack>
     </Box>
