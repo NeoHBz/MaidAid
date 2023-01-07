@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "maids",
+  "info": {
+    "name": "maid",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "experience": {
+      "type": "decimal"
+    },
+    "specializations": {
+      "type": "json"
+    },
+    "salary": {
+      "type": "integer"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

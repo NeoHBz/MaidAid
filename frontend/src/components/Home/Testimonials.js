@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import {
   Box,
   Flex,
@@ -10,11 +9,11 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-const Testimonial = ({ children }: { children: ReactNode }) => {
+const Testimonial = ({ children }) => {
   return <Box>{children}</Box>;
 };
 
-const TestimonialContent = ({ children }: { children: ReactNode }) => {
+const TestimonialContent = ({ children }) => {
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}
@@ -45,7 +44,7 @@ const TestimonialContent = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const TestimonialHeading = ({ children }: { children: ReactNode }) => {
+const TestimonialHeading = ({ children }) => {
   return (
     <Heading as={"h3"} fontSize={"xl"}>
       {children}
@@ -53,7 +52,7 @@ const TestimonialHeading = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const TestimonialText = ({ children }: { children: ReactNode }) => {
+const TestimonialText = ({ children }) => {
   return (
     <Text
       textAlign={"center"}
@@ -65,15 +64,7 @@ const TestimonialText = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const TestimonialAvatar = ({
-  src,
-  name,
-  title,
-}: {
-  src: string,
-  name: string,
-  title: string,
-}) => {
+const TestimonialAvatar = ({ src, name, title }) => {
   return (
     <Flex align={"center"} mt={8} direction={"column"}>
       <Avatar src={src} alt={name} mb={2} />
@@ -148,7 +139,7 @@ export default function Testimonials() {
                   "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 }
                 name={"Ajay Mandal"}
-                title={"Bihar, Patna"}
+                title={"Wakanda"}
               />
             </Testimonial>
           </Stack>
