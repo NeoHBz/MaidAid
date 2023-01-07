@@ -12,11 +12,17 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-const SocialProfileWithImage = () => {
+const SocialProfileWithImage = ({
+  name = "John Doe",
+  age = 21,
+  location = "Delhi, India",
+  salary = 10000,
+}) => {
+  const randomSeed = Math.floor(Math.random() * 1000);
   return (
     <Center py={6}>
       <Box
-        maxW={"270px"}
+        minW={"270px"}
         w={"full"}
         bg={useColorModeValue("white", "gray.800")}
         boxShadow={"2xl"}
@@ -33,10 +39,9 @@ const SocialProfileWithImage = () => {
         />
         <Flex justify={"center"} mt={-12}>
           <Avatar
+            backgroundColor={"white"}
             size={"xl"}
-            src={
-              "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-            }
+            src={`https://avatars.dicebear.com/api/croodles/${randomSeed}.svg`}
             alt={"Author"}
             css={{
               border: "2px solid white",
@@ -47,24 +52,30 @@ const SocialProfileWithImage = () => {
         <Box p={6}>
           <Stack spacing={0} align={"center"} mb={5}>
             <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
-              Lorem ipsum
+              {name}
             </Heading>
             <Text color={"gray.500"}>Maid</Text>
           </Stack>
 
-          <Stack direction={"row"} justify={"center"} spacing={6}>
+          <Stack direction={"row"} justify={"center"} spacing={12}>
             <Stack spacing={0} align={"center"}>
-              <Text fontWeight={600}>XX</Text>
+              <Text fontWeight={600}>{age}</Text>
               <Text fontSize={"sm"} color={"gray.500"}>
                 Age
               </Text>
             </Stack>
             <Stack spacing={0} align={"center"}>
-              <Text fontWeight={600}>Delhi, India</Text>
+              <Text fontWeight={600}>{location}</Text>
               <Text fontSize={"sm"} color={"gray.500"}>
                 Location
               </Text>
             </Stack>
+          </Stack>
+          <Stack spacing={0} align={"center"} mt={4}>
+            <Heading fontSize={"2xl"} fontWeight={500} fontFamily={"body"}>
+              ₹{salary}
+            </Heading>
+            <Text color={"gray.500"}>Salary/Month</Text>
           </Stack>
 
           <Button
@@ -97,9 +108,37 @@ export default function Helpers() {
       </Heading>
       <Stack direction={["column", "row"]} spacing={"16"}>
         {/* we can map here dummy data */}
-        <SocialProfileWithImage />
-        <SocialProfileWithImage />
+        {MaidData.map((data, index) => (
+          <SocialProfileWithImage
+            key={index}
+            name={data.name}
+            age={data.age}
+            location={data.location}
+            salary={data.salary}
+          />
+        ))}
       </Stack>
     </VStack>
   );
 }
+
+const MaidData = [
+  {
+    name: "John Doe",
+    age: 21,
+    location: "Delhi, India",
+    salary: 10000,
+  },
+  {
+    name: "John Doe",
+    age: 21,
+    location: "Delhi, India",
+    salary: 8000,
+  },
+  {
+    name: "John Doe",
+    age: 21,
+    location: "Delhi, India",
+    salary: 11000,
+  },
+];
