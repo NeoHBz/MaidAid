@@ -13,6 +13,7 @@ import {
   VStack,
   CheckboxGroup,
   Checkbox,
+  Select,
 } from "@chakra-ui/react";
 
 const SocialProfileWithImage = ({
@@ -116,6 +117,7 @@ export default function Helpers() {
     "babysitter",
     "elderlycare",
   ]);
+  const [salaryFilter, setSalaryFilter] = useState(10000);
   return (
     <VStack mt={16}>
       <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
@@ -139,6 +141,20 @@ export default function Helpers() {
           <Checkbox value="babysitter">Babysitter</Checkbox>
         </CheckboxGroup>
       </Stack>
+      <Stack direction="row">
+        <Text>Filter by Salary:</Text>
+        <Select
+          onChange={(e) => {
+            setSalaryFilter(e.target.value);
+          }}
+          value={salaryFilter}
+        >
+          <option value={5000}>5,000</option>
+          <option value={10000}>10,000</option>
+          <option value={15000}>15,000</option>
+          <option value={20000}>20,000</option>
+        </Select>
+      </Stack>
       <Stack
         direction={["column", "row"]}
         spacing={"16"}
@@ -146,7 +162,10 @@ export default function Helpers() {
         justify={"center"}
       >
         {MaidData.map((data, index) => {
-          if (filter.some((f) => data.specializations.includes(f))) {
+          if (
+            filter.some((f) => data.specializations.includes(f)) &&
+            data.salary <= salaryFilter
+          ) {
             return (
               <SocialProfileWithImage
                 key={index}
@@ -169,7 +188,7 @@ const MaidData = [
     name: "Ravi Shah",
     age: 25,
     location: "Mumbai, India",
-    salary: 14000,
+    salary: 5000,
     specializations: ["maid", "babysitter"],
   },
   {
@@ -183,7 +202,7 @@ const MaidData = [
     name: "Amit Patel",
     age: 29,
     location: "Bengaluru, India",
-    salary: 20000,
+    salary: 3000,
     specializations: ["babysitter"],
   },
   {
