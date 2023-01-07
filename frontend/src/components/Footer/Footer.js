@@ -33,13 +33,12 @@ export default function Footer() {
                 New
               </Tag>
             </Stack>
-            <Link href={"#"}>Tutorials</Link>
             <Link href={"#"}>Pricing</Link>
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Company</ListHeader>
             <Link href={"#"}>About Us</Link>
-            <Link href={"#"}>Contact Us</Link>
+            <Link href={"/contact"}>Contact Us</Link>
             <Link href={"#"}>Partners</Link>
           </Stack>
           <Stack align={"flex-start"}>

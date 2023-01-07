@@ -129,7 +129,7 @@ export default function Testimonials() {
               </TestimonialContent>
               <TestimonialAvatar
                 src={
-                  "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
+                  "https://borgenproject.org/wp-content/uploads/female-education-In-India-1.jpg"
                 }
                 name={"Rani Gupta"}
                 title={"Mumbai, Thane"}
@@ -145,7 +145,7 @@ export default function Testimonials() {
               </TestimonialContent>
               <TestimonialAvatar
                 src={
-                  "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
+                  "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 }
                 name={"Ajay Mandal"}
                 title={"Bihar, Patna"}

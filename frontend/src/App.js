@@ -1,4 +1,5 @@
 import Contactus from "pages/Contactus";
+import Helpers from "pages/Helpers";
 import Services from "pages/Services";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contactus />} />
+          <Route path="/helpers" element={<Helpers />} />
         </Routes>
         <Footer />
       </div>

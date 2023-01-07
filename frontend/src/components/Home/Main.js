@@ -46,6 +46,8 @@ export default function Main() {
           </Text>
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
             <Button
+              as={"a"}
+              href={"/helpers"}
               rounded={"full"}
               bg={"#0AC05E"}
               color={"white"}
@@ -55,7 +57,9 @@ export default function Main() {
             >
               Find Helpers
             </Button>
-            <Button rounded={"full"}>Join our team</Button>
+            <Button rounded={"full"} as={"a"} href={"/contact"}>
+              Join our team
+            </Button>
           </Stack>
         </Stack>
       </Flex>
