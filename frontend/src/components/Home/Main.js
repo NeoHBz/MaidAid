@@ -52,12 +52,12 @@ export default function Main() {
               bg={"#0AC05E"}
               color={"white"}
               _hover={{
-                bg: "#0AC05E",
+                bg: "green.300",
               }}
             >
               Find Helpers
             </Button>
-            <Button rounded={"full"} as={"a"} href={"/contact"}>
+            <Button rounded={"full"} as={"a"} href={"/signupasahelper"}>
               Join our team
             </Button>
           </Stack>

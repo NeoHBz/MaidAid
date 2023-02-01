@@ -86,15 +86,6 @@ export default function Navbar() {
           direction={"row"}
           spacing={6}
         >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"/login"}
-          >
-            Login
-          </Button>
           <Flex alignItems={"center"}>
             <Menu>
               <MenuButton
@@ -104,6 +95,7 @@ export default function Navbar() {
                 fontWeight={600}
                 color={"white"}
                 bg={"#0AC05E"}
+                _hover={{ bg: "green.300" }}
               >
                 Signup
               </MenuButton>
@@ -204,7 +196,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: "pink.50" }}
+      _hover={{ bg: "green.300" }}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
@@ -310,7 +302,7 @@ const NAV_ITEMS = [
     href: "/helpers",
   },
   {
-    label: "Contact Us",
-    href: "/contact",
+    label: "About Us",
+    href: "/aboutus",
   },
 ];
