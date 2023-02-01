@@ -6,21 +6,15 @@ import {
   Input,
   InputGroup,
   HStack,
-  InputRightElement,
   Stack,
   Button,
   Heading,
   Text,
   useColorModeValue,
-  Link,
   Checkbox,
 } from "@chakra-ui/react";
-import { useState } from "react";
-import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
 export default function Signupasahelper() {
-  const [showPassword, setShowPassword] = useState(false);
-
   return (
     <Flex
       minH={"100vh"}
@@ -34,7 +28,8 @@ export default function Signupasahelper() {
             Sign up as a Helper
           </Heading>
           <Text fontSize={"lg"} color={"gray.600"}>
-            to enjoy all of our cool features ✌️
+            We are delighted to have you on board! Please fill out the details
+            below so that we can get in touch with you soon!
           </Text>
         </Stack>
         <Box
@@ -83,20 +78,10 @@ export default function Signupasahelper() {
                 <Checkbox value="elderlycare">Elderly Care</Checkbox>
               </Stack>
             </FormControl>
-            <FormControl id="password" isRequired>
-              <FormLabel>Password</FormLabel>
+            <FormControl id="message">
+              <FormLabel>Message</FormLabel>
               <InputGroup>
-                <Input type={showPassword ? "text" : "password"} />
-                <InputRightElement h={"full"}>
-                  <Button
-                    variant={"ghost"}
-                    onClick={() =>
-                      setShowPassword((showPassword) => !showPassword)
-                    }
-                  >
-                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
-                  </Button>
-                </InputRightElement>
+                <Input type="text" />
               </InputGroup>
             </FormControl>
             <Stack spacing={10} pt={2}>
@@ -109,16 +94,8 @@ export default function Signupasahelper() {
                   bg: "#0AC05E",
                 }}
               >
-                Sign up
+                Submit
               </Button>
-            </Stack>
-            <Stack pt={6}>
-              <Text align={"center"}>
-                Already a user?{" "}
-                <Link href="/login" color={"blue.400"}>
-                  Login
-                </Link>
-              </Text>
             </Stack>
           </Stack>
         </Box>

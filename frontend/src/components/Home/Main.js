@@ -57,7 +57,7 @@ export default function Main() {
             >
               Find Helpers
             </Button>
-            <Button rounded={"full"} as={"a"} href={"/contact"}>
+            <Button rounded={"full"} as={"a"} href={"/signupasahelper"}>
               Join our team
             </Button>
           </Stack>

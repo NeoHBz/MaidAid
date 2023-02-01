@@ -86,15 +86,6 @@ export default function Navbar() {
           direction={"row"}
           spacing={6}
         >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"/login"}
-          >
-            Login
-          </Button>
           <Flex alignItems={"center"}>
             <Menu>
               <MenuButton
@@ -310,7 +301,7 @@ const NAV_ITEMS = [
     href: "/helpers",
   },
   {
-    label: "Contact Us",
-    href: "/contact",
+    label: "About Us",
+    href: "/aboutus",
   },
 ];
