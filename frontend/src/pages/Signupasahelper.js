@@ -91,7 +91,7 @@ export default function Signupasahelper() {
                 bg={"#0AC05E"}
                 color={"white"}
                 _hover={{
-                  bg: "#0AC05E",
+                  bg: "green.300",
                 }}
               >
                 Submit

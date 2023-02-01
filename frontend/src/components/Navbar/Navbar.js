@@ -95,6 +95,7 @@ export default function Navbar() {
                 fontWeight={600}
                 color={"white"}
                 bg={"#0AC05E"}
+                _hover={{ bg: "green.300" }}
               >
                 Signup
               </MenuButton>
@@ -195,7 +196,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: "pink.50" }}
+      _hover={{ bg: "green.300" }}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
