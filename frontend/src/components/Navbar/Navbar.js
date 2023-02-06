@@ -86,6 +86,15 @@ export default function Navbar() {
           direction={"row"}
           spacing={6}
         >
+          <Button
+            as={"a"}
+            fontSize={"sm"}
+            fontWeight={400}
+            variant={"link"}
+            href={"/login"}
+          >
+            Sign In
+          </Button>
           <Flex alignItems={"center"}>
             <Menu>
               <MenuButton
