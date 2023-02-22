@@ -11,6 +11,7 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  InputRightElement
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { GrView, GrHide } from "react-icons/gr";
