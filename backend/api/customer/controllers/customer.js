@@ -5,4 +5,11 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+  async newProfile({ dummyField }) {
+    const customerProfile = await strapi.services.customer.create({
+      futureField: dummyField,
+    });
+    return customerProfile;
+  },
+};

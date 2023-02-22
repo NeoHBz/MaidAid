@@ -1,5 +1,6 @@
 import Aboutus from "pages/Aboutus";
 import Helpers from "pages/Helpers";
+import Login from "pages/Login";
 import Services from "pages/Services";
 import Signupasahelper from "pages/Signupasahelper";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/signupasauser" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/signupasahelper" element={<Signupasahelper />} />
           <Route path="/services" element={<Services />} />
           <Route path="/aboutus" element={<Aboutus />} />

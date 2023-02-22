@@ -15,15 +15,24 @@
     "experience": {
       "type": "decimal"
     },
-    "specializations": {
-      "type": "json"
-    },
     "salary": {
       "type": "integer"
     },
-    "user": {
-      "plugin": "users-permissions",
-      "model": "user"
+    "isMaid": {
+      "type": "boolean",
+      "default": false
+    },
+    "isCook": {
+      "type": "boolean",
+      "default": false
+    },
+    "isBabysitter": {
+      "type": "boolean",
+      "default": false
+    },
+    "isElderlycare": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

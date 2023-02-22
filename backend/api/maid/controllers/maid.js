@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
@@ -7,12 +7,19 @@
 
 module.exports = {
   async newProfile({ user, specializations, experience, salary }) {
-    const maid = await strapi.services.maid.create({
+    const isMaid = specializations.includes("maid");
+    const isCook = specializations.includes("cook");
+    const isBabySitter = specializations.includes("babysitter");
+    const isElderlycare = specializations.includes("elderlycare");
+    const maidProfile = await strapi.services.maid.create({
       user,
-      specializations,
       experience,
       salary,
+      isMaid,
+      isCook,
+      isBabySitter,
+      isElderlycare,
     });
-    return maid;
+    return maidProfile;
   },
 };
