@@ -86,8 +86,6 @@ export default function Navbar() {
           direction={"row"}
           spacing={6}
         >
-<<<<<<< HEAD
-=======
           <Button
             as={"a"}
             fontSize={"sm"}
@@ -97,7 +95,6 @@ export default function Navbar() {
           >
             Sign In
           </Button>
->>>>>>> 25b24af0e27b74b17d8059106f969bba01bdaa10
           <Flex alignItems={"center"}>
             <Menu>
               <MenuButton
